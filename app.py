@@ -90,3 +90,13 @@ def prediction_page():
         "day": [day],
     }
     input_df = pd.DataFrame(input_data)
+    
+     # Encode the categorical features in the input data
+    encoder = OrdinalEncoder()
+    encoder.fit(input_df[['city', 'family', 'onpromotion', 'transferred', 'holiday_type']])
+    
+    # Prepare the input data for prediction
+    encoded_features = encoder.transform(input_df[['city', 'family', 'onpromotion', 'transferred', 'holiday_type']])
+    input_df[['city', 'family', 'onpromotion', 'transferred', 'holiday_type']] = encoded_features
+
+    
