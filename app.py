@@ -99,8 +99,15 @@ def prediction_page():
     encoded_features = encoder.transform(input_df[['city', 'family', 'onpromotion', 'transferred', 'holiday_type']])
     input_df[['city', 'family', 'onpromotion', 'transferred', 'holiday_type']] = encoded_features
 
- # Make the prediction
+    # Make the prediction
     def make_prediction():
         prediction = model.predict(input_df)
         return prediction[0]  # Return the predicted price
+        
+    # Display the prediction
+    if st.button("Predict"):
+        prediction = make_prediction()
+        st.subheader("Prediction")
+        st.balloons()
+        st.write("The predicted price of the item is:", prediction)
     
