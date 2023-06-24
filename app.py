@@ -1,7 +1,11 @@
 # Import packages
 import streamlit as st
 import pandas as pd
-import numpy as np
+import joblib
+#from sklearn.preprocessing import OrdinalEncoder
+from category_encoders.binary import BinaryEncoder
+from PIL import Image
+
 
 
 
@@ -9,11 +13,14 @@ import numpy as np
 
 
 # Setup & Config
+st.set_page_config(page_title="SALES PREDICTION APP")
 
+# Load the saved model
+model = joblib.load(r""C:\Users\BuzzJengz\Documents\GitHub\Streamlit - app 1\assets\ml\sales_predict.joblib"")
 
 # App
 
-## Header
+# Add the page title and configuration
 st.write("""# My First App
          This is my first app containing a form
          """)
