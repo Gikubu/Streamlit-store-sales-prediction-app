@@ -72,3 +72,21 @@ def prediction_page():
     month = st.sidebar.number_input('Month', min_value=1, max_value=12)
     day = st.sidebar.number_input('Day', min_value=1, max_value=31)
     trans_per_oil = transactions / dcoilwtico
+    
+    
+    # Create a DataFrame with the user input
+    input_data = {
+        "city": [city],
+        "dcoilwtico": [dcoilwtico],
+        "family": [family],
+        "onpromotion": [onpromotion],
+        "sales": [sales],
+        "store_nbr": [store_nbr_options[store_nbr]],
+        "transactions": [transactions],
+        #"transferred": [transferred],
+        "holiday_type": [holiday_type],
+        "year": [year],
+        "month": [month],
+        "day": [day],
+    }
+    input_df = pd.DataFrame(input_data)
