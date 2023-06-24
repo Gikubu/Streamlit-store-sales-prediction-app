@@ -110,4 +110,9 @@ def prediction_page():
         st.subheader("Prediction")
         st.balloons()
         st.write("The predicted price of the item is:", prediction)
+        
+    # Return the user input as a DataFrame
+    st.subheader("User Input")
+    st.write("The user input is:")
+    st.write(input_df)
     
