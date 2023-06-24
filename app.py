@@ -116,3 +116,9 @@ def prediction_page():
     st.write("The user input is:")
     st.write(input_df)
     
+    # App entry point
+    def main():
+    # Render the welcome page by default
+    page = st.sidebar.radio("Navigation", ("Welcome", "Prediction"))
+    
+    
