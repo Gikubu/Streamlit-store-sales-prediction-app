@@ -127,5 +127,7 @@ def prediction_page():
     elif page == "Prediction":
         prediction_page()
 
-    
+    # Run the app
+    if __name__ == "__main__":
+    main()
     
