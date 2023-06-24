@@ -121,4 +121,11 @@ def prediction_page():
     # Render the welcome page by default
     page = st.sidebar.radio("Navigation", ("Welcome", "Prediction"))
     
+    # Render the selected page based on user input
+    if page == "Welcome":
+        welcome_page()
+    elif page == "Prediction":
+        prediction_page()
+
+    
     
