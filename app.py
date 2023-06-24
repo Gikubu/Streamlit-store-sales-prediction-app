@@ -18,19 +18,15 @@ st.set_page_config(page_title="SALES PREDICTION APP")
 # Load the saved model
 model = joblib.load(r""C:\Users\BuzzJengz\Documents\GitHub\Streamlit - app 1\assets\ml\sales_predict.joblib"")
 
-# App
+# Define the input and output interfaces for the Streamlit app
+st.title("Item Price Prediction App")
 
-# Add the page title and configuration
-st.write("""# My First App
-         This is my first app containing a form
-         """)
+# Page 1: Welcome Page
+def welcome_page():
+    # Add a header and description
+    st.header("Welcome!")
+    st.write("This app predicts the price of items based on user input.")
 
-## Form
-with st.form("my_form") as form:
-    name = st.text_input(label="Enter your name, please...") 
-    height = st.number_input("Enter your height in centimeters, please...")
-    
-    submit = st.form_submit_button()
-
-print(f"[info] Here is my name : {name}")
-
+    # Add an image
+    image = Image.open(r":\"C:\Users\BuzzJengz\Documents\Store.jpg"")
+    st.image(image)
