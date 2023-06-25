@@ -2,7 +2,7 @@
 import streamlit as st
 import pandas as pd
 import joblib
-#from sklearn.preprocessing import OrdinalEncoder
+from sklearn.preprocessing import OrdinalEncoder
 from category_encoders.binary import BinaryEncoder
 from PIL import Image
 
@@ -16,7 +16,7 @@ from PIL import Image
 st.set_page_config(page_title="SALES PREDICTION APP")
 
 # Load the saved model
-model = joblib.load(r""C:\Users\BuzzJengz\Documents\GitHub\Streamlit - app 1\assets\ml\sales_predict.joblib"")
+model = joblib.load("C:/Users/BuzzJengz/Documents/GitHub/Streamlit - app 1/assets/ml/sales_predict.joblib")
 
 # Define the input and output interfaces for the Streamlit app
 st.title("Item Price Prediction App")
@@ -28,7 +28,7 @@ def welcome_page():
     st.write("This app predicts the price of items based on user input.")
 
     # Add an image
-    image = Image.open(r":\"C:\Users\BuzzJengz\Documents\Store.jpg"")
+    image = Image.open("C:/Users/BuzzJengz/Documents/Store.jpg")
     st.image(image)
     
     # Page 2: Prediction Page
@@ -116,18 +116,18 @@ def prediction_page():
     st.write("The user input is:")
     st.write(input_df)
     
-    # App entry point
-    def main():
+   # App entry point
+def main():
     # Render the welcome page by default
     page = st.sidebar.radio("Navigation", ("Welcome", "Prediction"))
-    
+
     # Render the selected page based on user input
     if page == "Welcome":
         welcome_page()
     elif page == "Prediction":
         prediction_page()
 
-    # Run the app
-    if __name__ == "__main__":
+# Run the app
+if __name__ == "__main__":
     main()
     

@@ -1,5 +1,6 @@
 streamlit
 pandas
 black
+Joblib
 scikit-learn
-tableu
+PIL
